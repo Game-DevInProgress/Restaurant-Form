@@ -1,0 +1,16 @@
+{
+  "name": "2406-assign-2",
+  "version": "1.0.0",
+  "description": "2406 Assignment 2",
+  "main": "restaurant_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "nodemon restaurant_server.js"
+  },
+  "author": "Juelz Rejano",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.14",
+    "pug": "^3.0.2"
+  }
+}
