@@ -1,0 +1,18 @@
+html
+    head 
+        title Homepage 
+
+    body 
+        include ./header
+
+        div#main(style="text-align:center;")
+            h1 
+                u Welcome to the Restaurant Order Page!
+            br
+            h3 Here you will be able to select a restaurant of choice and order items off of their menu.
+
+            #restaurantList(style="border: solid black;")
+                h2 The current available restaurants are: 
+
+                each restaurant in restaurants
+                    h4= restaurant.name

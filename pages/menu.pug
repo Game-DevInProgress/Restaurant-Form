@@ -1,0 +1,8 @@
+div.middleDiv
+    h2 Menu 
+    each category in Object.keys(menu)
+        h1= category
+        each item in Object.values(menu[category])
+            h4= item.name + "..." + item.price
+            p= item.description
+        br

@@ -1,0 +1,33 @@
+html
+    head 
+        title Restaurant Stats 
+        include ./header
+
+    body 
+        div
+            each restaurant in list
+                div
+                    h1= restaurant.name
+                    if restaurant.orders <=0
+                        h4 Number of orders: N/A 
+                        h4 Average order total: N/A
+                        h4 Most bought item: N/A
+                    else
+                        -
+                            var average = (restaurant.total/restaurant.orders).toFixed(2)
+                            var orderlist = []
+
+                            for(var name in restaurant.orderItems){
+                                orderlist.push([name,restaurant.orderItems[name]])
+                            }
+                            var highest = orderlist[0];
+                            console.log(highest);
+                            for(var i=1;i<orderlist.length;i++)
+                                if(orderlist[i][1] > highest[1]){
+                                    highest[0] = orderlist[i][0]
+                                    highest[1] = orderlist[i][1]
+                                }
+                        h4 Number of orders: #{restaurant.orders} 
+                        h4 Average order total: #{average}
+                        h4 Most bought item: #{highest[0]}
+                
